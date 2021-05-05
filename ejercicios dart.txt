@@ -40,9 +40,131 @@ String compareToDateNowasString( String date ){
 
 String compareToDateNowasStringTwo( String date ){
   int result =   DateTime.now().compareTo( DateTime.parse( date) );
-  return ( ( result >= 0 ) ? 'ahora o en el futuro': ' del pasado' );
+  return ( ( result >= 0 ) ? 'ahora o en el futuro': ' del pasado' );  
+}
+
+void comparaMomento(){
+  String momento = ( ( compareToDateNow('2020-11-20') >= 0 ) ? 'ahora o en el futuro': ' del pasado' );
+  print(momento);
   
-  
+  String momentoDos = ((compareToDateNow('2022-09-01') >= 0)
+      ? "ahora o en el futura"
+      : "del pasado");
+
+  print(momentoDos);
+}
+
+void casoGrado() {
+  String grado = "B";
+  switch (grado) {
+    case "A":
+      {
+        print("Excellent");
+      }
+      break;
+    case "B":
+      {
+        print("good");
+      }
+      break;
+
+    case "C":
+      {
+        print("Fair");
+      }
+      break;
+
+    case "D":
+      {
+        print("Poor");
+      }
+      break;
+
+    default:
+      {
+        print("invalid choice");
+      }
+      break;
+  }
+}
+
+void factorial() {
+  int num = 5;
+  int factorial = 1;
+
+  while (num >= 1) {
+    factorial = factorial * num;
+    num--;
+  }
+
+  print("The factorial is ${factorial}");
+}
+
+void doWhileMayorTo() {
+  int n = 10;
+  do {
+    print(n);
+    n--;
+  } while (n > 0);
+
+  print("salio");
+}
+
+void whileMenorTo() {
+  int count = 1;
+  while (count <= 10) {
+    print("dentro del while ${count}");
+    count++;
+    if (count == 4) {
+      break;
+    }
+  }
+
+  print("afuera del while ");
+}
+
+void whileCount() {
+  int count = 1;
+  bool loppWhile = true;
+
+  while (loppWhile) {
+    print(" dentro del while ${count}");
+    count++;
+    if (count == 4) {
+      loppWhile = false;
+    }
+  }
+}
+
+void conversion() {
+  var number = "hola";
+  print(number.runtimeType);
+
+  if (number == 'hola') {
+    print('hola mundo');
+  } else {
+    print('este es un numero');
+  }
+}
+
+void fechaTiempo() {
+  DateTime currentDate = DateTime.now();
+  print(currentDate.toString());
+  print(currentDate.toIso8601String());
+  print(currentDate.toUtc());
+  print(currentDate.toLocal());
+
+  DateTime date = DateTime.parse('2020-11-20');
+  print(date.toString());
+  print(date.toIso8601String());
+  print(date.toUtc());
+  print(date.toLocal());
+
+  print(currentDate.timeZoneName);
+
+  Duration diff = currentDate.difference(date);
+
+  print(" diferencia de dias ${diff.inDays}");
 }
 
 void main() {
@@ -55,6 +177,15 @@ void main() {
    print( compareToDateNowasStringTwo('2020-11-20') );
   
   print( compareToDateNowasStringTwo('2022-09-01') );
+  
+  comparaMomento();
+  casoGrado();
+  factorial();
+  doWhileMayorTo();
+  whileMenorTo();
+  whileCount();
+  conversion();
+  fechaTiempo();
   
   /*
   String momento = ( ( compareToDateNow('2020-11-20') >= 0 ) ? 'ahora o en el futuro': ' del pasado' );
