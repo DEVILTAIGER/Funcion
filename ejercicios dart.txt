@@ -1,12 +1,23 @@
-class Vehiculo { 
-  int llantas; 
-  int asientos; 
-  String modelo; 
+void listVariable() {
+  var list = ['apples', 'bananas', 'oranges'];
+
+  for (int index = 0; index < list.length; index++) {
+    print('la fruta desde un for es: ${list[index]}');
+  }
+
+  list.forEach((String estoEsUnasVariable) {
+    print('la fruta es ${estoEsUnasVariable}');
+  });
+}
+
+class Vehiculo {
+  int llantas;
+  int asientos;
+  String modelo;
   String marca;
-  
-  
-  Vehiculo( this.llantas, this.asientos,this.marca, this.modelo );
-  
+
+  Vehiculo(this.llantas, this.asientos, this.marca, this.modelo);
+
   @override
   String toString() {
     return """ 
@@ -18,35 +29,36 @@ class Vehiculo {
       ]
     """;
   }
-  
 }
 
- bool esMayorFunction( int numeroUno, int numeroDos  ){
-   return (numeroUno > numeroDos );
+bool esMayorFunction(int numeroUno, int numeroDos) {
+  return (numeroUno > numeroDos);
 }
 
-int compareToDateNow( String date ){
-  DateTime currentTime =  DateTime.now();
-  DateTime otherDate = DateTime.parse( date );
-  return currentTime.compareTo( otherDate );
+int compareToDateNow(String date) {
+  DateTime currentTime = DateTime.now();
+  DateTime otherDate = DateTime.parse(date);
+  return currentTime.compareTo(otherDate);
 }
 
-String compareToDateNowasString( String date ){
-  DateTime currentTime =  DateTime.now();
-  DateTime otherDate = DateTime.parse( date );
-  int result = currentTime.compareTo( otherDate );
-  return ( ( result >= 0 ) ? 'ahora o en el futuro': ' del pasado' ); 
+String compareToDateNowasString(String date) {
+  DateTime currentTime = DateTime.now();
+  DateTime otherDate = DateTime.parse(date);
+  int result = currentTime.compareTo(otherDate);
+  return ((result >= 0) ? 'ahora o en el futuro' : ' del pasado');
 }
 
-String compareToDateNowasStringTwo( String date ){
-  int result =   DateTime.now().compareTo( DateTime.parse( date) );
-  return ( ( result >= 0 ) ? 'ahora o en el futuro': ' del pasado' );  
+String compareToDateNowasStringTwo(String date) {
+  int result = DateTime.now().compareTo(DateTime.parse(date));
+  return ((result >= 0) ? 'ahora o en el futuro' : ' del pasado');
 }
 
-void comparaMomento(){
-  String momento = ( ( compareToDateNow('2020-11-20') >= 0 ) ? 'ahora o en el futuro': ' del pasado' );
+void comparaMomento() {
+  String momento = ((compareToDateNow('2020-11-20') >= 0)
+      ? 'ahora o en el futuro'
+      : ' del pasado');
   print(momento);
-  
+
   String momentoDos = ((compareToDateNow('2022-09-01') >= 0)
       ? "ahora o en el futura"
       : "del pasado");
@@ -168,16 +180,14 @@ void fechaTiempo() {
 }
 
 void main() {
- 
-  print( compareToDateNowasString('2020-11-20') );
-  
-  print( compareToDateNowasString('2022-09-01') );
+  print(compareToDateNowasString('2020-11-20'));
 
-  
-   print( compareToDateNowasStringTwo('2020-11-20') );
-  
-  print( compareToDateNowasStringTwo('2022-09-01') );
-  
+  print(compareToDateNowasString('2022-09-01'));
+
+  print(compareToDateNowasStringTwo('2020-11-20'));
+
+  print(compareToDateNowasStringTwo('2022-09-01'));
+
   comparaMomento();
   casoGrado();
   factorial();
@@ -186,7 +196,8 @@ void main() {
   whileCount();
   conversion();
   fechaTiempo();
-  
+  listVariable();
+
   /*
   String momento = ( ( compareToDateNow('2020-11-20') >= 0 ) ? 'ahora o en el futuro': ' del pasado' );
   
