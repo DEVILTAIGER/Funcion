@@ -1,3 +1,52 @@
+//Ejemplo mixin's
+
+abstract class Animal {}
+
+abstract class Mammal extends Animal {}
+
+abstract class Bird extends Animal {}
+
+abstract class Fish extends Animal {}
+
+//Comportamiento
+
+class Dolphin extends Mammal with SwimMixin {}
+
+class Bat extends Mammal with WalkMixin, FlyMixin {}
+
+class Cat extends Mammal with WalkMixin {}
+
+class Dove extends Mammal with WalkMixin {}
+
+class Shark extends Mammal with SwimMixin {}
+
+class FlyingFish extends Mammal with SwimMixin, FlyMixin {}
+
+//Implementacion
+/*
+class Dolphin extends Mammal{}
+class Bat extends Mammal{}
+class Cat extends Mammal{}
+class Dove extends Bird{}
+class Duck extends Bird{}
+class Shark extends Fish{}
+class FlyFish extends Fish{}
+*/
+//Variable
+
+mixin WalkMixin {
+  void walk(String text) => print("walk ${text}");
+  void velocity() => print("Its Very Fast");
+}
+
+mixin SwimMixin {
+  void swimming(String text) => print("swimming ${text}");
+}
+
+mixin FlyMixin {
+  void flying(String text) => print("flying ${text}");
+}
+
 void listVariable() {
   var list = ['apples', 'bananas', 'oranges'];
 
@@ -180,6 +229,14 @@ void fechaTiempo() {
 }
 
 void main() {
+  Dolphin newDolphin = new Dolphin();
+  newDolphin.swimming("Norberto");
+
+  Cat newCat = new Cat();
+  newCat.walk("inari");
+  newCat.velocity();
+
+  /*
   print(compareToDateNowasString('2020-11-20'));
 
   print(compareToDateNowasString('2022-09-01'));
@@ -196,5 +253,5 @@ void main() {
   whileCount();
   conversion();
   fechaTiempo();
-  listVariable();
+  listVariable();*/
 }
